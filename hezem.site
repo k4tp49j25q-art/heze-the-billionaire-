@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>hezem.site</title>
+  <style>
+    * { margin:0; padding:0; box-sizing:border-box; font-family: Arial, sans-serif; }
+    body { background:#f8f9fa; color:#333; scroll-behavior:smooth; line-height:1.6; overflow-x:hidden; }
+    a { text-decoration:none; color:inherit; }
+
+    /* Fade-in */
+    .fade-in { opacity:0; transform:translateY(20px); transition:opacity 1s ease-out, transform 1s ease-out; }
+    .fade-in.show { opacity:1; transform:translateY(0); }
+
+    /* Colors & shadows */
+    .btn { box-shadow:0 4px 6px rgba(0,0,0,0.1); }
+
+    /* Hero blobs */
+    .blob { position:absolute; border-radius:50%; filter:blur(100px); opacity:0.6; animation:float 15s infinite alternate; z-index:0; }
+    .blob1 { width:300px; height:300px; background:#f87171; top:-50px; left:-50px; animation-delay:0s; }
+    .blob2 { width:400px; height:400px; background:#f87171; top:100px; right:-100px; animation-delay:5s; }
+    @keyframes float { 0% { transform:translateY(0px) translateX(0px); } 100% { transform:translateY(40px) translateX(20px); } }
+
+    /* Header / Hero */
+    header {
+      position:relative; display:flex; flex-direction:column; justify-content:center; align-items:center;
+      height:100vh; background:linear-gradient(135deg,#7b3fe4,#fbbf24); color:#fff; padding:20px; overflow:hidden;
+    }
+    .hero-container { position:relative; z-index:1; display:flex; flex-direction:column; align-items:center; gap:40px; max-width:1200px; width:100%; }
+    .hero-text { max-width:600px; text-align:center; }
+    .hero-text h1 { font-size:3rem; margin-bottom:20px; text-shadow:1px 1px 5px rgba(0,0,0,0.2);}
+    .hero-text p { font-size:1.2rem; margin-bottom:30px; }
+    .hero-text .btn { display:inline-block; padding:14px 36px; background:#4b0082; color:#fff; font-weight:bold; border-radius:8px; transition:0.3s; }
+    .hero-text .btn:hover { background:#7b3fe4; transform:scale(1.05); }
+    .hero-image img { max-width:100%; height:auto; }
+    @media(min-width:768px) { .hero-container { flex-direction:row; text-align:left; justify-content:space-between; } }
+
+    /* CTA */
+    #cta { display:flex; flex-direction:column; align-items:center; justify-content:center; background:#fff; padding:80px 20px; text-align:center; box-shadow:0 10px 30px rgba(0,0,0,0.05); border-radius:12px; margin:40px auto; max-width:900px; }
+    #cta h2 { font-size:2rem; margin-bottom:20px; }
+    #cta p { font-size:1rem; max-width:500px; margin-bottom:30px; }
+    #cta form { display:flex; flex-direction:column; width:100%; max-width:400px; }
+    #cta input, #cta button { padding:14px; margin-bottom:15px; border-radius:6px; border:1px solid #ccc; font-size:1rem; }
+    #cta input { box-shadow: inset 0 2px 4px rgba(0,0,0,0.05); }
+    #cta button { background:#4b0082; color:#fff; border:none; cursor:pointer; font-weight:bold; transition:0.3s; box-shadow:0 4px 6px rgba(0,0,0,0.1); }
+    #cta button:hover { background:#7b3fe4; transform:scale(1.05); }
+
+    /* Features */
+    #features { padding:80px 20px; text-align:center; }
+    .feature-cards { display:flex; flex-direction:column; gap:30px; max-width:1200px; margin:0 auto; }
+    .feature-card { background:#fff; padding:30px; border-radius:12px; box-shadow:0 4px 15px rgba(0,0,0,0.05); flex:1; }
+    .feature-card h3 { font-size:1.5rem; margin-bottom:10px; }
+    .feature-card p { font-size:1rem; color:#555; }
+    @media(min-width:768px) { .feature-cards { flex-direction:row; } }
+
+    /* Testimonials */
+    #testimonials { background:#f1f5f9; padding:80px 20px; text-align:center; }
+    .testimonial-cards { display:flex; flex-direction:column; gap:30px; max-width:1200px; margin:0 auto; }
+    .testimonial-card { background:#fff; padding:30px; border-radius:12px; box-shadow:0 4px 15px rgba(0,0,0,0.05); }
+    .testimonial-card p { font-style:italic; margin-bottom:15px; color:#555; }
+    .testimonial-card h4 { font-weight:bold; }
+    @media(min-width:768px) { .testimonial-cards { flex-direction:row; } }
+
+    /* Footer */
+    footer { padding:40px 20px; background:#1f2937; color:#fff; text-align:center; font-size:0.9rem; }
+    footer a { color:#fbbf24; transition:0.3s; }
+    footer a:hover { color:#7b3fe4; }
+
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="blob blob1"></div>
+    <div class="blob blob2"></div>
+
+    <div class="hero-container fade-in">
+      <div class="hero-text">
+        <h1>Automate Your Trading with Hezem</h1>
+        <p>Start your trading journey easily and safely. No coding required!</p>
+        <a href="#cta" class="btn">Get Started</a>
+      </div>
+      <div class="hero-image">
+        <img src="https://i.ibb.co/f1T0Hqk/trading-bot-illustration.png" alt="Trading Bot Illustration">
+      </div>
+    </div>
+  </header>
+
+  <section id="cta" class="fade-in">
+    <h2>Get Started in Minutes</h2>
+    <p>Enter your details below and launch your first trading bot today. No experience required!</p>
+    <form>
+      <input type="text" placeholder="Your Name" required>
+      <input type="email" placeholder="Email Address" required>
+      <button type="submit">Start Now</button>
+    </form>
+  </section>
+
+  <section id="features" class="fade-in">
+    <h2>Features</h2>
+    <div class="feature-cards">
+      <div class="feature-card">
+        <h3>Real-Time Monitoring</h3>
+        <p>Keep track of your bot's performance 24/7 with live analytics and alerts.</p>
+      </div>
+      <div class="feature-card">
+        <h3>Multiple Strategies</h3>
+        <p>Choose from a variety of pre-built trading strategies or customize your own.</p>
+      </div>
+      <div class="feature-card">
+        <h3>Secure Environment</h3>
+        <p>All your data and trades are encrypted and safely stored in our platform.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="testimonials" class="fade-in">
+    <h2>What Users Say</h2>
+    <div class="testimonial-cards">
+      <div class="testimonial-card">
+        <p>"I set up my first bot in 10 minutes and it’s already making trades. Incredible!"</p>
+        <h4>— Alex P.</h4>
+      </div>
+      <div class="testimonial-card">
+        <p>"The interface is super simple, and I love that I don’t need to code anything."</p>
+        <h4>— Maria S.</h4>
+      </div>
+      <div class="testimonial-card">
+        <p>"Reliable and secure. My trading bot runs perfectly day and night."</p>
+        <h4>— James K.</h4>
+      </div>
+    </div>
+  </section>
+
+  <footer class="fade-in">
+    &copy; 2025 hezem.site. All rights reserved. | <a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a>
+  </footer>
+
+  <script>
+    const faders = document.querySelectorAll('.fade-in');
+    const appearOptions = { threshold:0.2, rootMargin:"0px 0px -50px 0px" };
+    const appearOnScroll = new IntersectionObserver((entries, observer)=>{
+      entries.forEach(entry=>{
+        if(!entry.isIntersecting) return;
+        entry.target.classList.add('show');
+        observer.unobserve(entry.target);
+      });
+    }, appearOptions);
+    faders.forEach(fader=>{ appearOnScroll.observe(fader); });
+  </script>
+
+</body>
+</html>
